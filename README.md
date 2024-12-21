@@ -1,5 +1,6 @@
 # VD06_Forms_HTML
  VD06. Взаимодействия с формами на сайте
+## Пакет, Дерево
 
 [blog и ввод данных
-Заявка](blog.html)
+Заявка](app/templates/blog.html)
