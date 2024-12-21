@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой блог</title>
+    <!-- Подключение CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Простой блог</h1>
+        <form method="post" action="/" class="mb-5">
+            <div class="form-group">
+                <label for="title">Заголовок</label>
+                <input id="title" type="text" name="title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Текст поста</label>
+                <textarea id="content" name="content" rows="3" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить пост</button>
+        </form>
+        <hr>
+        <h2 class="mb-4">Список постов</h2>
+
+        {% for post in posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <p class="card-text">{{ post.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Подключение JS Bootstrap и jQuery (необязательно) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!--### Объяснение изменений:
+
+1. **Подключение Bootstrap**: Я добавил ссылку на Bootstrap CSS в разделе `<head>`, чтобы использовать стили Bootstrap.
+
+2. **Классы Bootstrap**:
+   - **`container mt-5`**: Добавляет отступы сверху, чтобы отделить содержимое от края страницы.
+   - **`text-center`**: Центрирует текст заголовка.
+   - **`form-group`, `form-control`**: Используются для стилизации форм.
+   - **`btn btn-primary`**: Применяет стили к кнопке, делая её более заметной.
+   - **`card`, `card-body`, `card-title`, `card-text`**: Используются для стилизации каждого поста, что делает их оформление более структурированным и привлекательным.
+
+3. **Подключение JS и jQuery**: Добавление скриптов для работы некоторых интерактивных компонентов Bootstrap. Это не обязательно, если вы не используете
+интерактивные элементы, такие как модальные окна или выпадающие списки.-->
