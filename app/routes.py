@@ -17,4 +17,6 @@ def index():
             return redirect(url_for('index'))
     return render_template('user_profiles.html', posts=posts)
 
+if __name__ == '__main__':
+    app.run(debug=True)
 
