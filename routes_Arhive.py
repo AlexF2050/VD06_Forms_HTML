@@ -9,11 +9,9 @@ posts = []
 def index():
     if request.method == 'POST':
         title = request.form.get('title')
-        age = request.form.get('age')
-        city = request.form.get('city')
-        hobby = request.form.get('hobby')
-        if title and hobby:
-            posts.append({'title': title, 'age': age, 'city': city,'hobby': hobby})
+        content = request.form.get('content')
+        if title and content:
+            posts.append({'title': title, 'content': content})
             return redirect(url_for('index'))
     return render_template('user_profiles.html', posts=posts)
 

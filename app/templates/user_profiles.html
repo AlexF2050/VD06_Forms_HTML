@@ -3,32 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Простой блог</title>
+    <title>Анкета пользователя</title>
     <!-- Подключение CSS Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4 text-center">Простой блог</h1>
-        <form method="post" action="/" class="mb-5">
-            <div class="form-group">
-                <label for="title">Заголовок</label>
-                <input id="title" type="text" name="title" class="form-control" required>
+        <h1 class="mb-4 text-center">Анкета пользователя</h1>
+        <form method="post" action="/" class="mb-5"> <! ссылка на страницу сохранения данных -->
+            <div class="form-group"> <! форма для ввода данных -->
+                <label for="title">Имя</label> <! lable для ввода заголовка -->
+                <input id="title" type="text" name="title" class="form-control" required> <! input для ввода заголовка -->
+            </div>
+            <div class="form-group"> <! форма для ввода данных -->
+                <label for="age">Возраст</label> <! lable для ввода заголовка -->
+                <input id="age" type="text" name="age" class="form-control" required> <! input для ввода заголовка -->
+            </div>
+            <div class="form-group"> <! форма для ввода данных -->
+                <label for="city">Город</label> <! lable для ввода заголовка -->
+                <input id="city" type="text" name="city" class="form-control" required> <! input для ввода заголовка -->
             </div>
             <div class="form-group">
-                <label for="content">Текст поста</label>
-                <textarea id="content" name="content" rows="3" class="form-control" required></textarea>
+                <label for="hobby">Хобби</label>
+                <textarea id="hobby" name="hobby" rows="3" class="form-control" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Отправить пост</button>
+            <button type="submit" class="btn btn-primary">Отправить анкету</button>
         </form>
         <hr>
-        <h2 class="mb-4">Список постов</h2>
+        <h2 class="mb-4">Список анкет пользователей:</h2>
 
         {% for post in posts %}
             <div class="card mb-3">
                 <div class="card-body">
-                    <h4 class="card-title">{{ post.title }}</h4>
-                    <p class="card-text">{{ post.content }}</p>
+                    <h4 class="card-title">Имя: {{ post.title }}</h4>
+                    <p class="card-text">Возраст: {{ post.age }}</p>
+                    <p class="card-text">Город: {{ post.city }}</p>
+                    <p class="card-text">Моё хобби: {{ post.hobby }}</p>
                 </div>
             </div>
         {% endfor %}
